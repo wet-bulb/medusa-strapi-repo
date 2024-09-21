@@ -71,7 +71,7 @@
     "@medusajs/medusa": "^1.17.4",
     "@strapi/plugin-users-permissions": "^4.6.1",
     "axios": "^0.27.2",
-    "medusa-interfaces": "latest",
+    "medusa-interfaces": "*",
     "typeorm": "^0.3.16"
   },
   "dependencies": {
