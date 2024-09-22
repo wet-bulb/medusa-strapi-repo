@@ -33,6 +33,21 @@ const providerConfigAws = (env) => {
 	};
 };
 
+const providerConfigCloudinary = (env) => {
+	return {
+	provider: 'cloudinary',
+	providerOptions: {
+	  cloud_name: env('CLOUDINARY_NAME'),
+	  api_key: env('CLOUDINARY_KEY'),
+	  api_secret: env('CLOUDINARY_SECRET'),
+	},
+	actionOptions: {
+	  upload: {},
+	  delete: {},
+	},
+}
+};
+
 const providerConfigLocal = {
 	providerOptions: {
 		localServer: {
@@ -80,7 +95,7 @@ module.exports = ({ env }) => ({
 
 	upload: {
 		enabled: true,
-		config: env('NODE_ENV') == 'test' ? providerConfigLocal : providerConfigAws(env),
+		config: env('NODE_ENV') == 'test' ? providerConfigLocal : providerConfigCloudinary(env),
 	},
 	email: {
 		enabled: true,
